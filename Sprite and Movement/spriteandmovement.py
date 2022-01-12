@@ -18,7 +18,8 @@ pygame.init()
 screen = pygame.display.set_mode([512, 512])
 
 running = True
-location = 0
+xoffset = 0
+yoffset = 0
 while running:
 
     for event in pygame.event.get():
@@ -26,12 +27,17 @@ while running:
             running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                location -= 10
+                xoffset -= 10
             if event.key == pygame.K_RIGHT:
-                location += 10
+                xoffset += 10
+            if event.key == pygame.K_UP:
+                yoffset -= 10
+            if event.key == pygame.K_DOWN:
+                yoffset += 10
+
 
     screen.fill((18, 18, 18))
-    pygame.draw.circle(screen, (0, 0, 255), (250+location, 250), 75)
+    pygame.draw.circle(screen, (0, 0, 255), (250+xoffset, 250+yoffset), 75)
     pygame.display.flip()
 
 pygame.quit()
