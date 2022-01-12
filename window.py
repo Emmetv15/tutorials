@@ -23,7 +23,7 @@ while running:
             location=4
 
     screen.fill((18, 18, 18))
-    pygame.draw.circle(screen, (0, 0, 255), (250+location, 250), 75)
+    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
     pygame.display.flip()
 
 pygame.quit()

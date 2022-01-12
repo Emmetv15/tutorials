@@ -16,15 +16,22 @@ class Player(pygame.sprite.Sprite):
 pygame.init()
 
 screen = pygame.display.set_mode([512, 512])
+
 running = True
+location = 0
 while running:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                location -= 10
+            if event.key == pygame.K_RIGHT:
+                location += 10
 
     screen.fill((18, 18, 18))
-    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+    pygame.draw.circle(screen, (0, 0, 255), (250+location, 250), 75)
     pygame.display.flip()
 
 pygame.quit()
