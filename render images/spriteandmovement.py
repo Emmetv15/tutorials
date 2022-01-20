@@ -21,19 +21,24 @@ running = True
 xoffset = 0
 yoffset = 0
 while running:
-
+    pygame.key.set_repeat(50,50)
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                xoffset -= 10
-            if event.key == pygame.K_RIGHT:
-                xoffset += 10
-            if event.key == pygame.K_UP:
-                yoffset -= 10
-            if event.key == pygame.K_DOWN:
-                yoffset += 10
+        keys=pygame.key_pressed()
+        pygame.key
+        if (event.type == pygame.QUIT):
+            bProgramLoop = False
+        if keys[pygame.K_LEFT]:
+            xoffset-=1
+            print("left")
+        if keys[pygame.K_RIGHT]:
+            print("right")
+            xoffset+=1
+        if keys[pygame.K_UP]:
+            print("up")
+            yoffset-=1
+        if keys[pygame.K_DOWN]:
+            print("down")
+            yoffset+=1
 
 
     screen.fill((18, 18, 18))

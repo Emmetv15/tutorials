@@ -7,6 +7,7 @@ from spriteandmovement import *
 pygame.init()
 
 screen = pygame.display.set_mode([512, 512])
+
 running = True
 while running:
 
@@ -14,11 +15,13 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     keys=pygame.key.get_pressed()
-    if keys[K_LEFT]:
+    if keys[pygame.K_LEFT]:
         location-=1
+        print("left")
         if location==-1:
             location=0
-    if keys[K_RIGHT]:
+    if keys[pygame.K_RIGHT]:
+        print("right")
         location+=1
         if location==5:
             location=4
